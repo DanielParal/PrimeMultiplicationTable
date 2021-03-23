@@ -1,0 +1,23 @@
+﻿@model PrimeOutputModelView
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <h1>Results: </h1>
+            @if (Model.ErrorMessage != null)
+            {
+                <h3 class="text-center">@Model.ErrorMessage</h3>
+            }
+            else
+            {
+                <h3>Input value: @Model.InputValue</h3>
+            }
+            <a class="btn btn-primary" asp-controller="Primes" asp-action="Index">Go Back</a>
+        </div>
+    </div>
+</div>
+
+@if (Model.ErrorMessage == null)
+{
+    <partial name="_PrimesMultiplicationTable" model="Model" />
+}

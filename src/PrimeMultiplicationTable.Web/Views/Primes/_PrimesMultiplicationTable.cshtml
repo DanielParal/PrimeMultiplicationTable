@@ -1,0 +1,28 @@
+﻿@model PrimeOutputModelView
+
+<div class="row mt-5">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td></td>
+                    @foreach (int numberX in Model.AxisXPrimeNumbers)
+                    {
+                        <td>@numberX</td>
+                    }
+                </tr>
+
+                @foreach(int numberY in Model.AxisYPrimeNumbers)
+                {
+                <tr>
+                    <td>@numberY</td>
+                    @foreach (int numberX in Model.AxisXPrimeNumbers)
+                    {
+                        <td>@(numberX * numberY)</td>
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

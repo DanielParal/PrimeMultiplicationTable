@@ -1,0 +1,31 @@
+﻿
+@model PrimeInputModelView
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <h1>Welcome to prime multiplication table</h1>
+            <h3>Please enter the count of primes</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <form method="post" asp-controller="Primes" asp-action="Calculate">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PrimesCount"></label>
+                <input asp-for="PrimesCount" type="number" class="form-control" />
+                <span asp-validation-for="PrimesCount" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-success" type="submit" value="Calculate" />
+            </div>
+        </form>
+    </div>
+</div>
+
