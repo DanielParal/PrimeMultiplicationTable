@@ -54,7 +54,7 @@ namespace PrimeMultiplicationTable.Web.Controllers
 
                     _logger.LogInformation($"Calculation process correctly. Value: {model.PrimesCount}");
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     _logger.LogError($"Error during calculation. Value: {model.PrimesCount}. Error: {ex}");
 
